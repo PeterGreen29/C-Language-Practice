@@ -1,0 +1,11 @@
+//this code ties together everything I have learned in the C language as of 2/26/21
+
+#include <stdio.h>
+int main (void) {
+    int i=0;
+    for(i=0;i<3;i++) {
+        printf("peter is so cool\n");
+        printf("here is his favorite number: %d\n",3*23);
+    }
+    return 0;
+}
