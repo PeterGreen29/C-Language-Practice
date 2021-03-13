@@ -1,0 +1,19 @@
+//This program first asks users how many numbers they'd like to add together.
+//Then, it asks users what number to add first, and outputs the total sum.
+//It repeats this as many times as indicated by the first prompt
+//Finally, it outputs the total sum one last time and thanks users for using Peter's Adding Machine.
+
+#include <stdio.h>
+int main(void){
+    int howMany, addNum, sum = 0;
+    printf("How many numbers would you like to add?\n");
+    scanf("%d",&howMany);
+    for(int i=0;i<howMany;i++){
+        printf("Please enter the number you'd like to add: ");
+        scanf("%d",&addNum);
+        sum = sum + addNum;
+        printf("Total sum = %d\n",sum);
+    }
+    printf("Thanks for using Peter's Adding Machine.");
+    return 0;
+}
