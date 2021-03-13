@@ -1,0 +1,17 @@
+#include <stdio.h>
+int main(void){
+    int multi;
+    scanf("%d",&multi);
+    printf("0x%d = %d\n",multi,0*multi);
+    printf("1x%d = %d\n",multi,1*multi);
+    printf("2x%d = %d\n",multi,2*multi);
+    printf("3x%d = %d\n",multi,3*multi);
+    printf("4x%d = %d\n",multi,4*multi);
+    printf("5x%d = %d\n",multi,5*multi);
+    printf("6x%d = %d\n",multi,6*multi);
+    printf("7x%d = %d\n",multi,7*multi);
+    printf("8x%d = %d\n",multi,8*multi);
+    printf("9x%d = %d\n",multi,9*multi);
+    printf("10x%d = %d\n",multi,10*multi);
+    return 0;
+}
