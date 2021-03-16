@@ -1,0 +1,31 @@
+/*This code first asks users to input 
+the number of test scores to be averaged. 
+Then, user enters test scores one by one
+until the desired # of scores is entered.
+Finally, program outputs the mean of 
+these scores, to 2 decimal places.
+
+The purpose of this exercise is to
+combine a variety of topics learned
+& to practice converting int vars
+to double vars. */
+
+#include <stdio.h>
+int main(void){
+    printf("Welcome to Peter's Average Grade Calculator.\n");
+    printf("Please enter the total number of test scores: ");
+    int numGd;
+    int addGrade;
+    int gradeSum=0;
+    double mean;
+    scanf("%d",&numGd);
+    for(int i=0;i<numGd;i++)
+    {
+    printf("Please enter test score: ");
+    scanf("%d",&addGrade);
+    gradeSum = gradeSum + addGrade;
+    }
+    mean = (double)gradeSum / numGd;
+    printf("The average of the %d test scores is %.2lf",numGd,mean);
+    return 0;
+}
