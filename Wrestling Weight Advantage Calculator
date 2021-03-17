@@ -1,0 +1,34 @@
+/* This program helps users make bets on wrestling teams,
+based on which team has a total weight advantage. 
+First, it promps users to input the # of teammates on each
+team. Then, it asks users to input the weight of each team
+member, alternating between the two teams. Finally, it
+declares one team as having an advantage and shares the 
+total weight of each team. */
+
+#include <stdio.h>
+int main(void){
+    int teamSize,wt1=0,wt2=0,addWt,playerNum=1;
+    int i;
+    int result;
+    printf("Please enter team size: ");
+    scanf("%d",&teamSize);
+    for (i=0;i<teamSize;i++){
+        printf("Enter weight in kg of team 1 player %d: ",playerNum);
+        scanf("%d",&addWt);
+        wt1=wt1+addWt;
+        printf("Enter weight in kg of team 2 player %d: ",playerNum);
+        scanf("%d",&addWt);
+        wt2=wt2+addWt;
+        playerNum = playerNum+1;
+    }
+    result = wt1>wt2;
+    if(result){
+        printf("Team 1 has an advantage\n");
+    } else {
+        printf("Team 2 has an advantage\n");
+    }
+    printf("Total weight for team 1: %d\n",wt1);
+    printf("Total weight for team 2: %d",wt2);
+    return 0;
+}
