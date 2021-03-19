@@ -1,0 +1,98 @@
+
+//PROBLEM STATEMENT:
+/* As you cross a forest you can't help but admire the nature around 
+you including the many species of trees. Despite your interest, you 
+are a very unskilled botanist and have a lot of trouble identifying 
+different trees. A friend gives you some guidance and you decide to 
+write a program that will give you the name of the tree based on its characteristics.
+
+There are 4 types of trees:
+the "Tinuviel" is 5 meters high or less and its leaves are composed of 8 or more leaflets
+the "Calaelen" is 10 meters high or more and its leaves are composed of 10 or more leaflets
+the "Falarion" is 8 meters high or less and its leaves are composed of 5 or fewer leaflets
+the "Dorthonion" is 12 meters tall or more and its leaves are composed of 7 or fewer leaflets
+
+Your program should read the height and the number of leaflets of a given tree (both integers)
+, and should be able to determine and display the name of the corresponding tree.
+If the height and number of leaflets does not match any of the tree type descriptions, 
+your program should display "Uncertain". */
+
+
+/* NOTES:
+There are a number of if statements in my program. the first 4 print out the type of tree 
+if the entered criteria (height, leaflets) match that of the tree (see problem statement).
+These if statements also assign a value of 1 to int var satisfied.
+
+The last statement is for all other scenarios, or when the entered input does not match
+the criteria of any tree type. In this case, none of the if statements containing tree
+name print output statements are run, and subsequently the satisfied int var retains its
+initial value of 0. Thus, this last statement contains (!satisfied), which means it will
+run if the satisfied int var = 0 and no tree name has been output. 
+
+I originally tried to accomplish this with an else statement, however else statements apply
+to only a single if statement. So even if, let's say, the first if statement was good and
+it output the tree type, the else statement on the 4th if statement would run and also
+output something, which doesn't work for this exercise.
+
+I also tried stuff with nested if statements and this didnt work. All if statements are
+separate of eachother. */
+
+
+
+//MY SOLUTION
+#include <stdio.h>
+int main(void){
+    int height, leaflets,satisfied=0; //satisfied must be declared = 0 for last if statement to work correctly
+    scanf("%d",&height);   //user inputs height of tree
+    scanf("%d",&leaflets); //user inputs # leaflets on tree
+    if(height<=5 && leaflets>=8){
+        printf("Tinuviel");
+        satisfied = 1;
+    }
+    if(height>=10 && leaflets>=10){
+        printf("Calaelen");
+        satisfied = 1;
+    }
+    if(height<=8 && leaflets<=5){
+        printf("Falarion");
+        satisfied = 1;
+    }
+    if(height>=12 && leaflets<=7){
+        printf("Dorthonion");
+        satisfied = 1;
+    }
+    if(!satisfied){
+        printf("Uncertain");
+    }
+    return 0;
+}
+
+
+
+//COURSE'S SOLUTION
+#include <stdio.h>
+int main() {
+    int height = 0;
+    int nbLeaflets = 0;
+    scanf("%d %d", &height, &nbLeaflets);
+    int tinuviel = height <= 5 && nbLeaflets >= 8;
+    int calaelen = height >= 10 && nbLeaflets >= 10;
+    int falarion = height <= 8 && nbLeaflets <= 5;
+    int dorthonion = height >= 12 && nbLeaflets <= 7;
+    if(tinuviel) {
+        printf("Tinuviel");
+    }
+    if(calaelen){
+        printf("Calaelen");
+    }
+    if(falarion){
+        printf("Falarion");
+    }
+    if(dorthonion){
+        printf("Dorthonion");
+    }
+    if(!tinuviel && !calaelen && !falarion && !dorthonion){
+        printf("Uncertain");
+    }
+    return 0;
+}
