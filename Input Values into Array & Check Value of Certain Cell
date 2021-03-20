@@ -1,0 +1,18 @@
+#include <stdio.h>
+int main(void){
+    int array[10];
+    int inputValue;
+    int inputCell=0;
+    int outputCell;
+    int i;
+    for (i=0;i<10;i++){
+        //printf("Enter ingredient weight in grams: ")
+        scanf("%d",&inputValue);
+        array[inputCell] = inputValue;
+        inputCell = inputCell + 1;
+    }
+    //printf("Enter cell # to view its contents:")
+    scanf("%d",&inputCell);
+    printf("%d",array[inputCell]);
+    return 0;
+}
